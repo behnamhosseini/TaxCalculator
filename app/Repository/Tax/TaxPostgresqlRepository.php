@@ -36,7 +36,6 @@ class TaxPostgresqlRepository implements TaxRepositoryInterface
 
     public function averageCountryTaxRatePerState($stateId): float
     {
-
         return County::whereStateId($stateId)->avg('tax_rate');
     }
 

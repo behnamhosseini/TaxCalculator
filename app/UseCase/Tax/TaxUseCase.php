@@ -23,21 +23,21 @@ class TaxUseCase implements TaxUseCaseInterface
 
     public function averageAmountOfTaxesPerState($stateId): float
     {
-        return $this->taxRepository->averageAmountOfTaxesPerState($stateId);
+        return round($this->taxRepository->averageAmountOfTaxesPerState($stateId),2);
     }
 
     public function averageCountryTaxRatePerState($stateId): float
     {
-        return $this->taxRepository->averageCountryTaxRatePerState($stateId);
+        return round($this->taxRepository->averageCountryTaxRatePerState($stateId),2);
     }
 
     public function averageTaxRateOfTheCountry($countryId): float
     {
-        return $this->taxRepository->averageTaxRateOfTheCountry($countryId);
+        return round($this->taxRepository->averageTaxRateOfTheCountry($countryId),2);
     }
 
     public function overallTaxesOfTheCountry($countryId): float
     {
-        return $this->taxRepository->overallTaxesOfTheCountry($countryId);
+        return round($this->taxRepository->overallTaxesOfTheCountry($countryId),2);
     }
 }
