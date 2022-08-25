@@ -10,7 +10,7 @@ use App\Models\State;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Builder;
 
-class TaxMysqlRepository implements TaxRepositoryInterface
+class TaxPostgresqlRepository implements TaxRepositoryInterface
 {
 
     public function overallAmountOfTaxesPerState($stateId): float

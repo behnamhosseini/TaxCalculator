@@ -4,31 +4,40 @@
 namespace App\UseCase\Tax;
 
 
+use App\Repository\Tax\TaxRepositoryInterface;
+
 class TaxUseCase implements TaxUseCaseInterface
 {
 
+    private TaxRepositoryInterface $taxRepository;
+
+    public function __construct(TaxRepositoryInterface $taxRepository)
+    {
+        $this->taxRepository = $taxRepository;
+    }
+
     public function overallAmountOfTaxesPerState($stateId): float
     {
-        // TODO: Implement overallAmountOfTaxesPerState() method.
+        return round($this->taxRepository->overallAmountOfTaxesPerState($stateId),2);
     }
 
     public function averageAmountOfTaxesPerState($stateId): float
     {
-        // TODO: Implement averageAmountOfTaxesPerState() method.
+        return $this->taxRepository->averageAmountOfTaxesPerState($stateId);
     }
 
     public function averageCountryTaxRatePerState($stateId): float
     {
-        // TODO: Implement averageCountryTaxRatePerState() method.
+        return $this->taxRepository->averageCountryTaxRatePerState($stateId);
     }
 
     public function averageTaxRateOfTheCountry($countryId): float
     {
-        // TODO: Implement averageTaxRateOfTheCountry() method.
+        return $this->taxRepository->averageTaxRateOfTheCountry($countryId);
     }
 
     public function overallTaxesOfTheCountry($countryId): float
     {
-        // TODO: Implement overallTaxesOfTheCountry() method.
+        return $this->taxRepository->overallTaxesOfTheCountry($countryId);
     }
 }
