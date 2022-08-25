@@ -11,3 +11,10 @@ php artisan sail:install - (select 0,1)
 Change the `initial` value in the database config file
 
 ```
+
+### for test
+```
+make `database.sqlite` file in database directory
+
+ ./vendor/bin/sail artisan test
+```
