@@ -11,7 +11,7 @@ class TaxRepositoryFactory
     {
         $connection=[
             'mysql' => TaxMysqlRepository::class,
-            'postgresql' => TaxPostgresqlRepository::class,
+            'pgsql' => TaxPostgresqlRepository::class,
         ];
         return $connection[$taxRepositoryDb];
     }

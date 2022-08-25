@@ -14,8 +14,6 @@ return new class extends Migration
      */
     public function up()
     {
-        //ToDo:write comment for ties table
-
         Schema::create('county_incomes', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(County::class);

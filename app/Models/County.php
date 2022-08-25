@@ -16,7 +16,6 @@ class County extends Model
         return $this->belongsTo(State::class);
     }
 
-    //ToDo: برای تست
     public function countyIncome()
     {
         return $this->hasOne(CountyIncome::class);
