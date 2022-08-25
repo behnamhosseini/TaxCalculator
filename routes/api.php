@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\TaxCalculatorController;
+use App\Models\State;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +20,9 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-
+Route::get('sd',function(){
+    return State::all();
+});
 Route::prefix('tax')->name('tax.')->group(function () {
     Route::get('overallAmountOfTaxesPerState/{state}',[TaxCalculatorController::class,'overallAmountOfTaxesPerState'])->name('overallAmountOfTaxesPerState');
     Route::get('averageAmountOfTaxesPerState/{state}',[TaxCalculatorController::class,'averageAmountOfTaxesPerState'])->name('averageAmountOfTaxesPerState');
